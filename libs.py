@@ -1,7 +1,12 @@
 import json
 import requests
+from flask import Flask
+app = Flask(__name__)
 
-def get_parsed_name(full_name):
+
+@api.route('/get_name_parsed')
+def get_name_parsed(full_name):
+>>>>>>> 071cf2fab5b80ceef41b06eebebdf932cb2592f0
     full_name = full_name.lower()
     for letter in full_name:     
         if letter == ' ':
@@ -22,7 +27,7 @@ def get_parsed_name(full_name):
             full_name = full_name.replace(letter, 'u')
     return full_name
 
-
+@api.route('/get_url')
 def get_url(parsed_name):
     url = "https://transparentia.newtral.es/api/get/byName/" + parsed_name
     return url
