@@ -1,5 +1,5 @@
 def getnamefilter(completename):
-    completename.lower()
+    completename = completename.lower()
     for letter in completename:
         if letter==' ':
             completename = completename.replace(letter, '-')
@@ -18,6 +18,3 @@ def getnamefilter(completename):
         if letter=='ü':
              completename = completename.replace(letter, 'u')
     return completename
-
-name = "Pedro Sánchez Castejón"
-print(getnamefiltered(name))
