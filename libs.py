@@ -1,3 +1,5 @@
+import json
+import requests
 from flask import Flask
 app = Flask(__name__)
 
@@ -34,6 +36,20 @@ def get_url(parsed_name):
     url = "https://transparentia.newtral.es/api/get/byName/" + parsed_name
     return url
 
+<<<<<<< HEAD
 def get_url(parsed_name):
     url = "https://newtral.es/transparentia/" + parsed_name
     return url
+=======
+def get_salary(parsed_name):
+    url = get_api_url(parsed_name)
+    response = requests.request("GET", url)
+    total_salary = 0
+    politician_json = response.json()
+    charges_list = politician_json["cargos"]
+    for charge in charges_list:
+        salaries_charge = charge["salarios"]
+        for salary in salaries_charge:
+            total_salary += salary["salario_mensual"]
+    return total_salary
+>>>>>>> 749b13b27790472831784784ff40e63a855c71e7

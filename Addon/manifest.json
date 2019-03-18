@@ -3,18 +3,18 @@
     "manifest_version": 2,
     "name": "Transparentia",
     "version": "1.0",
-   
+
     "description": "Añade en el perfil de un político su sueldo",
-  
+
     "icons": {
-      "48": "icon.jpg"
+      "48": "colitick.png"
     },
-  
+
     "content_scripts": [
       {
         "matches": ["https://twitter.com/*"],
         "js": ["transparentia.js"]
       }
     ]
-  
+
   }
