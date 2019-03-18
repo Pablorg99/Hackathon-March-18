@@ -27,12 +27,19 @@ def get_name_parsed(full_name):
     return full_name
 
 
-@api.route('/get_url')
+@app.route('/get_api_url')
+def get_API_url(parsed_name):
+    url = "https://transparentia.newtral.es/api/get/byName/" + parsed_name
+    return url
+
+
+@app.route('/get_url')
 def get_url(parsed_name):
     url = "https://transparentia.newtral.es/api/get/byName/" + parsed_name
     return url
 
 
+@app.route('get_salary')
 def get_salary(parsed_name):
     url = get_api_url(parsed_name)
     response = requests.request("GET", url)
@@ -43,4 +50,4 @@ def get_salary(parsed_name):
         salaries_charge = charge["salarios"]
         for salary in salaries_charge:
             total_salary += salary["salario_mensual"]
-	return total_salary
+    return total_salary
