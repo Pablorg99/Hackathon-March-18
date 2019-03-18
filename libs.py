@@ -18,3 +18,7 @@ def getnamefilter(completename):
         if letter=='ü':
              completename = completename.replace(letter, 'u')
     return completename
+
+def getURL(name):
+    name = "https://transparentia.newtral.es/api/get/byName/" + name
+    return name
