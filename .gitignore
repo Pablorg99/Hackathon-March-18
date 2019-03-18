@@ -204,6 +204,7 @@ dmypy.json
 .venv/
 
 ### VisualStudioCode ###
+/.vscode
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -215,3 +216,4 @@ dmypy.json
 .history
 
 # End of https://www.gitignore.io/api/python,pycharm,java-web,visualstudiocode
+prueba.*
