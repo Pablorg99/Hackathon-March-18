@@ -4,7 +4,7 @@ from flask import Flask
 app = Flask(__name__)
 
 
-@api.route('/get_name_parsed')
+@app.route('/get_name_parsed')
 def get_name_parsed(full_name):
     full_name = full_name.lower()
     for letter in full_name:
