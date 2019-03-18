@@ -1,3 +1,8 @@
+from flask import Flask
+app = Flask(__name__)
+
+
+@api.route('/get_name_parsed')
 def get_name_parsed(full_name):
     full_name = full_name.lower()
     for letter in full_name:     
@@ -19,7 +24,7 @@ def get_name_parsed(full_name):
             full_name = full_name.replace(letter, 'u')
     return full_name
 
-
+@api.route('/get_url')
 def get_url(parsed_name):
     url = "https://transparentia.newtral.es/api/get/byName/" + parsed_name
     return url
