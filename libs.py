@@ -1,9 +1,12 @@
+import json
+import requests
 from flask import Flask
 app = Flask(__name__)
 
 
 @api.route('/get_name_parsed')
 def get_name_parsed(full_name):
+>>>>>>> 071cf2fab5b80ceef41b06eebebdf932cb2592f0
     full_name = full_name.lower()
     for letter in full_name:     
         if letter == ' ':
@@ -28,3 +31,16 @@ def get_name_parsed(full_name):
 def get_url(parsed_name):
     url = "https://transparentia.newtral.es/api/get/byName/" + parsed_name
     return url
+
+def get_salary(parsed_name):
+    url = get_api_url(parsed_name)
+    response = requests.request("GET", url)
+    total_salary = 0
+    politician_json = response.json()
+    charges_list = politician_json["cargos"]
+    for charge in charges_list:
+        salaries_charge = charge["salarios"]
+        for salary in salaries_charge:
+            total_salary += salary["salario_mensual"]
+    return total_salary
+
