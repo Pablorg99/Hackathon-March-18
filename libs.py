@@ -1,24 +1,25 @@
-def getnamefilter(completename):
-    completename = completename.lower()
-    for letter in completename:
-        if letter==' ':
-            completename = completename.replace(letter, '-')
-        if letter=='ñ':
-            completename = completename.replace(letter, 'n')
-        if letter=='á':
-             completename = completename.replace(letter, 'a')
-        if letter=='é':
-             completename = completename.replace(letter, 'e')
-        if letter=='í':
-             completename = completename.replace(letter, 'i')
-        if letter=='ó':
-             completename = completename.replace(letter, 'o')
-        if letter=='ú':
-             completename = completename.replace(letter, 'u')
-        if letter=='ü':
-             completename = completename.replace(letter, 'u')
-    return completename
+def get_name_parsed(full_name):
+    full_name = full_name.lower()
+    for letter in full_name:     
+        if letter == ' ':
+            full_name = full_name.replace(letter, '-')
+        if letter == 'ñ':
+            full_name = full_name.replace(letter, 'n')
+        if letter == 'á':
+            full_name = full_name.replace(letter, 'a')
+        if letter == 'é':
+            full_name = full_name.replace(letter, 'e')
+        if letter == 'í':
+            full_name = full_name.replace(letter, 'i')
+        if letter == 'ó':
+            full_name = full_name.replace(letter, 'o')
+        if letter == 'ú':
+            full_name = full_name.replace(letter, 'u')
+        if letter == 'ü':
+            full_name = full_name.replace(letter, 'u')
+    return full_name
 
-def getURL(name):
-    name = "https://transparentia.newtral.es/api/get/byName/" + name
-    return name
+
+def get_url(parsed_name):
+    url = "https://transparentia.newtral.es/api/get/byName/" + parsed_name
+    return url
