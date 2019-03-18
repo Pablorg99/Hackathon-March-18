@@ -6,7 +6,6 @@ app = Flask(__name__)
 
 @api.route('/get_name_parsed')
 def get_name_parsed(full_name):
->>>>>>> 071cf2fab5b80ceef41b06eebebdf932cb2592f0
     full_name = full_name.lower()
     for letter in full_name:     
         if letter == ' ':
@@ -43,4 +42,3 @@ def get_salary(parsed_name):
         for salary in salaries_charge:
             total_salary += salary["salario_mensual"]
     return total_salary
-
