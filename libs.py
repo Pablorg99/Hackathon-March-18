@@ -7,7 +7,7 @@ app = Flask(__name__)
 @api.route('/get_name_parsed')
 def get_name_parsed(full_name):
     full_name = full_name.lower()
-    for letter in full_name:     
+    for letter in full_name:
         if letter == ' ':
             full_name = full_name.replace(letter, '-')
         if letter == 'ñ':
@@ -26,10 +26,12 @@ def get_name_parsed(full_name):
             full_name = full_name.replace(letter, 'u')
     return full_name
 
+
 @api.route('/get_url')
 def get_url(parsed_name):
     url = "https://transparentia.newtral.es/api/get/byName/" + parsed_name
     return url
+
 
 def get_salary(parsed_name):
     url = get_api_url(parsed_name)
@@ -41,4 +43,4 @@ def get_salary(parsed_name):
         salaries_charge = charge["salarios"]
         for salary in salaries_charge:
             total_salary += salary["salario_mensual"]
-    return total_salary
+	return total_salary
