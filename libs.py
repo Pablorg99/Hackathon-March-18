@@ -20,6 +20,10 @@ def get_name_parsed(full_name):
     return full_name
 
 
-def get_url(parsed_name):
+def get_API_url(parsed_name):
     url = "https://transparentia.newtral.es/api/get/byName/" + parsed_name
+    return url
+
+def get_url(parsed_name):
+    url = "https://newtral.es/transparentia/" + parsed_name
     return url
