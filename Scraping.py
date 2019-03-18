@@ -2,6 +2,9 @@
 import requests
 import json
 
+def getURL(name):
+	name = "https://transparentia.newtral.es/api/get/byName/" + name
+	return name
 
 url = "https://transparentia.newtral.es/api/get/byName/pedro-sanchez-calderon"
 
@@ -13,6 +16,11 @@ headers = {
         'cache-control': "no-cache"
 }
 
+getnamefilter()
+
+getURL()
+
 response = requests.request("GET", url)
 
 print (response.text)
+
